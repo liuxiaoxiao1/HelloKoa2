@@ -1,4 +1,5 @@
 {
+  "presets": ["react", "es2015"],
   "env": {
     "test": {
       "presets": ["es2015-node5"],
@@ -6,6 +7,16 @@
         "transform-async-to-generator",
         "syntax-async-functions"
       ]
+    },
+    "dev": {
+      "plugins": [["react-transform", {
+        "transforms": [{
+          "transform": "react-transform-hmr",
+          "imports": ["react"],
+          "locals": ["module"]
+        }]
+      }]]
     }
+
   }
 }
